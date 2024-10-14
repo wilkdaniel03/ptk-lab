@@ -1,0 +1,13 @@
+clear;
+close all;
+N = 128;
+n = 0:N-1;
+f1 = 4;
+f2 = 48;
+x1 = 4*cos(2*pi*f1/N*n);
+x2 = 2*cos(2*pi*f2/N*n);
+x = x1 + x2;
+y1 = fft(x);
+y1_mod = abs(y1);
+subplot(211), plot(x);
+subplot(212), stem(n,y1_mod);
